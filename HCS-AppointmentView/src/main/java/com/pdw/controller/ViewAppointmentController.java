@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.pdw.entity.Appointment;
+import com.pdw.entity.Appointments;
 import com.pdw.service.UserViewServiceI;
 
 @RestController
@@ -18,8 +17,8 @@ public class ViewAppointmentController {
 	UserViewServiceI userAppointmnetS;
 	
 	 @GetMapping("/FetchAppList")
-	   public List<Appointment> getCenterList(){
-		   List<Appointment> center=userAppointmnetS.AppointmentList();
+	   public List<Appointments> getCenterList(){
+		   List<Appointments> center=userAppointmnetS.AppointmentList();
 		   return center; 
 	   }
 

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.pdw.daoI.AppointmentDaoI;
 import com.pdw.daoI.CenterDaoI;
 import com.pdw.daoI.TestDaoI;
-import com.pdw.entity.Appointment;
+import com.pdw.entity.Appointments;
 import com.pdw.entity.DiagnosticCenter;
 import com.pdw.entity.Tests;
 @Service
@@ -32,13 +32,13 @@ public class UserAppointmentService implements UserAppointmentServiceI  {
 	
 	@Override
 	public List<Tests> TestsList(String centreId) {
-		List<Tests> testList=centerListDao.getOne(centreId).getList_Of_Tests();
+		List<Tests> testList=centerListDao.getOne(centreId).getListOfTests();
 		return testList;
 	}
 
 	@Override
-	public String makeAppointment(Appointment app) {
-		Appointment updatedApp= appointmentDao.save(app);
+	public String makeAppointment(Appointments app) {
+		Appointments updatedApp= appointmentDao.save(app);
 		
 		return "Appointment is registered, please await for confirmation";
 	}

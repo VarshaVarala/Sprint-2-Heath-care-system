@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.pdw.entity.Appointment;
+import com.pdw.entity.Appointments;
 import com.pdw.entity.DiagnosticCenter;
 import com.pdw.entity.Tests;
 import com.pdw.service.UserAppointmentServiceI;
@@ -21,9 +21,6 @@ import com.pdw.service.UserAppointmentServiceI;
 @CrossOrigin("http://localhost:4200")
 public class UserAppointmentController {
 	
-	/*Random rand = new Random();
-	int rand_int1 = rand.nextInt(1000);
-	diagnosticCentre.setCentreId(Integer.toString(rand_int1));*/
 	@Autowired
 	UserAppointmentServiceI userAppointmnetS;
 	
@@ -41,7 +38,7 @@ public class UserAppointmentController {
 	   }
 	 
 	 @PostMapping("/makeAppointment")
-	 public String updateAppointment(Appointment app) {
+	 public String updateAppointment(@RequestBody Appointments app) {
 		 System.out.println(app.toString());
 		 String updateMsg =  userAppointmnetS.makeAppointment(app);
 		 return updateMsg;

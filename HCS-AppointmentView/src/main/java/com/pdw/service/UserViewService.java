@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pdw.dao.AppointmentDaoI;
-import com.pdw.dao.CenterDaoI;
-import com.pdw.dao.TestDaoI;
-import com.pdw.entity.Appointment;
-import com.pdw.entity.DiagnosticCenter;
+import com.pdw.entity.Appointments;
 
 @Service
 public class UserViewService implements UserViewServiceI {
@@ -18,8 +15,8 @@ public class UserViewService implements UserViewServiceI {
 	AppointmentDaoI appointmentDao;
 	
 	@Override
-	public List<Appointment> AppointmentList() {
-		List<Appointment> appList=appointmentDao.findAll();
+	public List<Appointments> AppointmentList() {
+		List<Appointments> appList=appointmentDao.findAll();
 		return appList;
 	}
 

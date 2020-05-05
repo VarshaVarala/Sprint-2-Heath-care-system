@@ -3,46 +3,44 @@ package com.pdw.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "diagnostic_centre")
 public class DiagnosticCenter {
 	@Id
 	@Column(length=20)
-	private String centreId;
-	private String centreName;
+	private String center_Id;
+	private String centerName;
 	@OneToMany
 	@JoinColumn(name ="tests_center")
 	private List<Tests> listOfTests = new ArrayList<Tests>();
 	@OneToMany
 	@JoinColumn(name ="appointment_center")
-	private List<Appointment> appointmentList = new ArrayList<Appointment>();
+	private List<Appointments> appointmentList = new ArrayList<Appointments>();
 
-	public String getCentreId() {
-		return centreId;
+	public String getCenter_Id() {
+		return center_Id;
 	}
 
-	public void setCentreId(String centreId) {
-		this.centreId = centreId;
+	public void setCenterId(String centreId) {
+		this.center_Id = center_Id;
 	}
 
-	public String getCentreName() {
-		return centreName;
+	public String getCenterName() {
+		return centerName;
 	}
 
-	public void setCentreName(String centreName) {
-		this.centreName = centreName;
+	public void setCenterName(String centreName) {
+		this.centerName = centerName;
 	}
 
 	public List<Tests> getListOfTests() {
@@ -53,11 +51,11 @@ public class DiagnosticCenter {
 		this.listOfTests = listOfTests;
 	}
 
-	public List<Appointment> getAppointmentList() {
+	public List<Appointments> getAppointmentList() {
 		return appointmentList;
 	}
 
-	public void setAppointmentList(List<Appointment> appointmentList) {
+	public void setAppointmentList(List<Appointments> appointmentList) {
 		this.appointmentList = appointmentList;
 	}
 public DiagnosticCenter () {
@@ -65,8 +63,8 @@ public DiagnosticCenter () {
 }
 	@Override
 	public String toString() {
-		return "DiagnosticCenter [centreId=" + centreId + ", centreName=" + centreName + ", listOfTests=" + listOfTests
-				+ ", appointmentList=" + appointmentList + "]";
+		return "DiagnosticCenter [centreId=" + center_Id + ", centreName=" + centerName + ", listOfTests=" + listOfTests
+				+ "]";
 	}
 
 
