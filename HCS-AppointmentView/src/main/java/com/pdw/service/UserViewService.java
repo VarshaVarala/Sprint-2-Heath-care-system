@@ -16,7 +16,8 @@ public class UserViewService implements UserViewServiceI {
 	
 	@Override
 	public List<Appointments> AppointmentList() {
-		List<Appointments> appList=appointmentDao.findAll();
+		List<Appointments> appList=appointmentDao.findAll(); 
+		// using data jpa find all method to get the values
 		return appList;
 	}
 
