@@ -4,8 +4,9 @@ import java.util.List;
 
 import com.pdw.entity.Appointments;
 
-public interface UserViewServiceI {
-
+public interface AdminViewServiceI {
 	List<Appointments> AppointmentList();
+
+	String approveAppointment(Appointments app);
 
 }

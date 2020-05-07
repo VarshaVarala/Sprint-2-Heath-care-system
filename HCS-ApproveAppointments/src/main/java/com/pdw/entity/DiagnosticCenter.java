@@ -27,19 +27,22 @@ public class DiagnosticCenter {
 	@JoinColumn(name ="appointment_center")
 	private List<Appointments> appointmentList = new ArrayList<Appointments>();
 
+
+
 	public String getCenter_Id() {
 		return center_Id;
 	}
 
-	public void setCenterId(String centreId) {
+	public void setCenter_Id(String center_Id) {
 		this.center_Id = center_Id;
 	}
+
 
 	public String getCenterName() {
 		return centerName;
 	}
 
-	public void setCenterName(String centreName) {
+	public void setCenterName(String centerName) {
 		this.centerName = centerName;
 	}
 
@@ -70,4 +73,3 @@ public DiagnosticCenter () {
 
 	
 }
-
