@@ -4,11 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HcsUserAppointmentApplication {
+public class HcsAppointmentViewApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HcsUserAppointmentApplication.class, args);
+		SpringApplication.run(HcsAppointmentViewApplication.class, args);
 	}
-	
-	
+
 }

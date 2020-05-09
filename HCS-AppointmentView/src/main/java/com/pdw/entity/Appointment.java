@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Appointment_table")
-public class Appointments{
+public class Appointment{
 	
 	@Id
 	@GeneratedValue
@@ -68,11 +68,9 @@ public class Appointments{
 				+ approved + ", userId=" + userId + ", test=" + test + ", center=" + center + "]";
 	}
 	
-	
-	
-	public Appointments() {
-
-}
+	public  Appointment() {
+		
+	}
 	
 
 }
