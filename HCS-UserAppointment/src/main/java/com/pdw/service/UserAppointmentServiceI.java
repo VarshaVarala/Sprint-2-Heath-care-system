@@ -12,6 +12,7 @@ public interface UserAppointmentServiceI {
 	List<DiagnosticCentre> DiagnosticCenterList();
 	List<Test> TestsList(String centreId);
 	String makeAppointment(Appointment app);
-//	Boolean userIdFound(String userId);
+    Boolean userIdFound(String userId);
+	List<Appointment> AppointmentList();
 
 }

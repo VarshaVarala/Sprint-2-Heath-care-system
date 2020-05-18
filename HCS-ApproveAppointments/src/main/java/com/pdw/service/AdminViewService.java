@@ -7,22 +7,24 @@ import org.springframework.stereotype.Service;
 
 import com.pdw.daoI.AppointmentDaoI;
 import com.pdw.entity.Appointment;
+
+
+//
 @Service
 public class AdminViewService implements AdminViewServiceI{
-	
 	@Autowired
 	AppointmentDaoI appointmentDao;
 	
 	@Override
 	public List<Appointment> AppointmentList() {
-		List<Appointment> appList=appointmentDao.findAll(); 
-		// using data jpa find all method to get the values
-		return appList;
+		List<Appointment> appointmentList=appointmentDao.findAll(); 
+		// using data jpa we're using find all method to get the values
+		return appointmentList;
 	}
 
 	@Override
-	public String approveAppointment(Appointment app) {
-		Appointment updatedApp= appointmentDao.save(app);
+	public String approveAppointment(Appointment appointment) {
+		Appointment updatedAppointment= appointmentDao.save(appointment);
 		return "Appointment is updated";
 	}
 

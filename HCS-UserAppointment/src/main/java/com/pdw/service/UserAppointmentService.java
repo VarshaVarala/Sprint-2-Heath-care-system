@@ -36,17 +36,25 @@ public class UserAppointmentService implements UserAppointmentServiceI  {
 		return testList;
 	}
 	
-	//public Boolean userIdFound(String userId){
-	//	List<String> exists=appointmentDao.checkUserIdEXists(userId);
-		//Boolean value=exists.isEmpty();
-	//	return value;
-//	}
+	public Boolean userIdFound(String userId){
+		List<String> exists=appointmentDao.checkUserIdEXists(userId);
+		Boolean value=exists.isEmpty();
+	return value;
+	}
 
 	@Override
 	public String makeAppointment(Appointment app) {
-		Appointment updatedApp= appointmentDao.save(app);
+		appointmentDao.save(app);
 		
 		return "Appointment is registered, please await for confirmation";
+	}
+
+
+	@Override
+	public List<Appointment> AppointmentList() {
+		List<Appointment> appList=appointmentDao.findAll(); 
+		// using data jpa find all method to get the values
+		return appList;
 	}
 
 

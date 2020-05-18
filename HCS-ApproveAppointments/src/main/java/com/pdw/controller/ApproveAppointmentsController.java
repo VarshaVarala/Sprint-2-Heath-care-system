@@ -1,11 +1,8 @@
 package com.pdw.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +19,11 @@ public class ApproveAppointmentsController {
 	AdminViewServiceI adminViewService;
 	
 	 @PutMapping("/approveAppointment")
-	 public String updateAppointment(@RequestBody Appointment app) {
-		 System.out.println(app.toString());
-		 String updateMsg =  adminViewService.approveAppointment(app);
-		 return updateMsg;
+	 public String updateAppointment(@RequestBody Appointment appointment) {
+		 System.out.println(appointment.toString());
+		 String updateMessage =  adminViewService.approveAppointment(appointment);
+		 return updateMessage;
 	 }
+	 
+	 
 }

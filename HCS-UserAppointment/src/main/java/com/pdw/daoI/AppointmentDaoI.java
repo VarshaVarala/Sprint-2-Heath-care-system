@@ -11,6 +11,6 @@ import com.pdw.entity.Appointment;
 @Repository
 public interface AppointmentDaoI extends JpaRepository<Appointment,String>{
 
-	//@Query("select m.userId from Appointments m where m.userId=?1")
-	//public List<String> checkUserIdEXists(String userId);
+	@Query("select m.userId from Appointment m where m.userId=?1")
+	public List<String> checkUserIdEXists(String userId);
 }
